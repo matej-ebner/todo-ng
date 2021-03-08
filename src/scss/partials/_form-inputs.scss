@@ -1,0 +1,42 @@
+@import "~src/scss/base";
+
+.form-control-wrapper {
+    display: flex;
+    margin-top: 1em;
+    color: $dark;
+
+    &:not(&--radio-inputs) {
+        flex-direction: column;
+    }
+
+    &--radio-inputs {
+        align-items: center;
+    }
+
+    &__control {
+        padding: 0.5em;
+        background: $white;
+        border: 1px solid $black;
+        font-size: 1.1em;
+        border-radius: $common-border-radius;
+    }
+
+    &__radio-input-label {
+        margin: 0 1em;
+        color: $white;
+    }
+
+    &__validation-message {
+        color: $red;
+    }
+}
+
+textarea {
+    resize: none;
+    height: 10em;
+}
+
+input[type="datetime-local"]:hover,
+input[type="radio"]:hover {
+    cursor: pointer;
+}

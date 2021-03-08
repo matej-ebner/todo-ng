@@ -1,0 +1,21 @@
+@import "~src/scss/base";
+
+.todo-form {
+    background: $black;
+    padding: 2em;
+    border-radius: $common-border-radius;
+
+    &__btn-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 1em;
+        &__btn {
+            font-size: 1em;
+
+            &--active {
+                background: $white;
+                color: $black;
+            }
+        }
+    }
+}

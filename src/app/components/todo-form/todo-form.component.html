@@ -1,0 +1,51 @@
+<form [formGroup]="todoForm" class="todo-form" #f="ngForm">
+
+    <!-- Name input -->
+    <div class="form-control-wrapper">
+        <input type="text" class="form-control-wrapper__control" formControlName="name" placeholder="Name">
+        <ng-container *ngIf="formsService.fieldHasError(todoForm,'name')">
+            <span *ngIf="todoForm.get('name').errors['required']" class="form-control-wrapper__validation-message">
+                Mandatory field!
+            </span>
+            <span *ngIf="!todoForm.get('name').errors['required'] && todoForm.get('name').errors['pattern']"
+                class="form-control-wrapper__validation-message">
+                Invalid format!
+            </span>
+        </ng-container>
+    </div>
+
+    <!-- Description input -->
+    <div class="form-control-wrapper">
+        <textarea class="form-control-wrapper__control" formControlName="description"
+            placeholder="Description" maxlength="400"></textarea>
+        <ng-container *ngIf="formsService.fieldHasError(todoForm,'description')">
+            <span *ngIf="todoForm.get('description').errors['required']" class="form-control-wrapper__validation-message">
+                Mandatory field!
+            </span>
+        </ng-container>
+    </div>
+
+    <!-- Date input -->
+    <div class="form-control-wrapper">
+        <input type="datetime-local" class="form-control-wrapper__control" formControlName="date">
+    </div>
+
+    <!-- Status input -->
+    <div class="form-control-wrapper form-control-wrapper--radio-inputs">
+        <input type="radio" class="form-control-wrapper__control" formControlName="status" [value]="dictionary.TODO_STATUS">
+        <label class="form-control-wrapper__radio-input-label">Todo</label>
+        <input type="radio" class="form-control-wrapper__control" formControlName="status" [value]="dictionary.IN_PROGRESS_STATUS">
+        <label class="form-control-wrapper__radio-input-label">In progress</label>
+        <input type="radio" class="form-control-wrapper__control" formControlName="status" [value]="dictionary.DONE_STATUS">
+        <label class="form-control-wrapper__radio-input-label">Done</label>
+    </div>
+
+    <div class="todo-form__btn-wrapper">
+        <button cdkMonitorSubtreeFocus type="button" (click)="saveTodo()"
+            class="blank-button todo-form__btn-wrapper__btn " [ngClass]="{'todo-form__save-btn--active':f.valid}"
+            [attr.disabled]="f.valid ? null : 'disabled'">
+            Save
+        </button>
+    </div>
+
+</form>

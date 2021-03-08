@@ -1,0 +1,21 @@
+<div class="todo-table">
+    <ng-container [ngSwitch]="status">
+        <p *ngSwitchCase="dictionary.TODO_STATUS" class="todo-table__status">
+            todo
+        </p>
+        <p *ngSwitchCase="dictionary.IN_PROGRESS_STATUS" class="todo-table__status">
+            in progress
+        </p>
+        <p *ngSwitchCase="dictionary.DONE_STATUS" class="todo-table__status">
+            done
+        </p>
+    </ng-container>
+
+    <ng-container *ngIf="todos.length > 0; else noTodos">
+        <td-todo-detail *ngFor="let todo of todos" [todo]="todo"></td-todo-detail>
+    </ng-container>
+
+    <ng-template #noTodos>
+        <p class="todo-table__no-todos">No todos</p>
+    </ng-template>
+</div>

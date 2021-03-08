@@ -1,0 +1,12 @@
+<div class="error-wrapper">
+    <p>Server error {{errorsService.errorCode}} occured<br>
+        <ng-container [ngSwitch]="errorsService.errorCode">
+            <span *ngSwitchCase="404" class="error-wrapper__message">{{ dictionary.ERROR_ENDPOINT_NOT_FOUND }} </span>
+            <span *ngSwitchCase="500" class="error-wrapper__message">
+                {{ dictionary.ERROR_UNHANDLED_EXCEPTION }}.<br>
+                Please reload application or try again later. 
+            </span>
+        </ng-container>
+
+    </p>
+</div>

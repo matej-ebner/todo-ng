@@ -1,0 +1,17 @@
+<menu class="menu">
+    <p class="menu__title">Get organized</p>
+    <div class="menu__buttons">
+        <a [routerLink]="['/']" 
+           class="menu__buttons__btn info-button" 
+           [class.menu__buttons__btn--active] = "router.url === '/'"
+        >
+        All Todos
+        </a>
+        <a [routerLink]="['/new']" 
+           class="menu__buttons__btn info-button" 
+           [class.menu__buttons__btn--active] = "router.url === '/new-todo'"
+        >
+        New todo
+        </a>
+    </div>
+</menu>

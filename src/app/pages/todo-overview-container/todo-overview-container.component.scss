@@ -1,0 +1,19 @@
+@import "~src/scss/base";
+
+.todos-overview-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    :nth-child(2) {
+        margin: 2em 0;
+    }
+
+    @include mq-min($lg) {
+        flex-direction: row;
+
+        :nth-child(2) {
+            margin: 0 2em;
+        }
+    }
+}

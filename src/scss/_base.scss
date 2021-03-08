@@ -1,0 +1,40 @@
+// VARIABLES
+$font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// COLORS
+$red: #ff0000;
+$white: #ffffff;
+$black: #555555;
+$dark: #1c1c1c;
+
+// BREAKPOINTS
+$xxs: 375;
+$xs: 480;
+$sm: 544;
+$md: 768;
+$lg: 992;
+$xl: 1200;
+$xxl: 1440;
+$xxxl: 1680;
+
+// BORDER-RADIUS
+$common-border-radius: 0.5em;
+
+// MEDIA QUERIES
+@mixin mq-min($min) {
+    @media screen and (min-width: ($min/16) + em) {
+        @content;
+    }
+}
+
+@mixin mq-max($max) {
+    @media screen and (max-width: (($max - 1)/16) + em) {
+        @content;
+    }
+}
+
+@mixin mq-min-max($min, $max) {
+    @media screen and (min-width: ($min/16) + em) and (max-width: (($max - 1)/16) + em) {
+        @content;
+    }
+}

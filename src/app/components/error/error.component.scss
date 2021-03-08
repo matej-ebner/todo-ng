@@ -1,0 +1,21 @@
+@import "~src/scss/base";
+
+.error-wrapper {
+    position: fixed;
+    background: $black;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.6em;
+    color: $red;
+    z-index: 100;
+
+    * {
+        text-align: center;
+    }
+}

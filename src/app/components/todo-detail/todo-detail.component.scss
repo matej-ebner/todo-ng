@@ -1,0 +1,26 @@
+@import "~src/scss/base";
+
+.todo-detail-wrapper {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    background: $white;
+    padding: 1em;
+    border-radius: $common-border-radius;
+
+    &__data {
+        word-wrap: break-word;
+        :not(:first-child) {
+            margin-top: 0.6em;
+        }
+    }
+
+    &__action-buttons {
+        display: inherit;
+        margin-top: 0.6em;
+
+        :first-child {
+            margin-right: 0.5em;
+        }
+    }
+}

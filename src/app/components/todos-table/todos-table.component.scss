@@ -1,0 +1,36 @@
+@import "~src/scss/base";
+
+.todo-table {
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: $black;
+    padding: 1em;
+    border-radius: $common-border-radius;
+    width: 90%;
+
+    @include mq-min($lg) {
+        width: 300px;
+    }
+
+    @include mq-min($xxl) {
+        width: 400px;
+    }
+
+    &__status {
+        text-align: center;
+        color: $white;
+        font-weight: 700;
+        font-size: 1.4em;
+        margin-bottom: 1em;
+        text-transform: uppercase;
+    }
+
+    &__no-todos {
+        color: $white;
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.1em;
+    }
+}

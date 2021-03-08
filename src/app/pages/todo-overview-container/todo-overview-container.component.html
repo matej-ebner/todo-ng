@@ -1,0 +1,5 @@
+<section class="todos-overview-wrapper" *ngIf="todosListObservable$ | async">
+        <td-todos-table [todos]="todoDataService.todosList.todo" [status]="dictionary.TODO_STATUS"></td-todos-table>
+        <td-todos-table [todos]="todoDataService.todosList.inProgress" [status]="dictionary.IN_PROGRESS_STATUS"></td-todos-table>
+        <td-todos-table [todos]="todoDataService.todosList.done" [status]="dictionary.DONE_STATUS"></td-todos-table>
+</section>

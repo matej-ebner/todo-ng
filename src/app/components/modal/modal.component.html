@@ -1,0 +1,16 @@
+<div class="modal">
+    <div class="modal__overlay" (click)="actionConfirmed.emit(false)"></div>
+    <div class="modal__container">
+        <div class="modal__container__content">
+            <button class="modal__button-close" (click)="actionConfirmed.emit(false)">
+                <td-icon-close></td-icon-close>
+            </button>
+            <p class="modal__question-paragraf">{{questionString}}</p>
+
+            <div class="modal__action-buttons-wrapper">
+                <button class="info-button modal__action-buttons-wrapper__btn" (click)="actionConfirmed.emit(true)">{{acceptString}}</button>
+                <button class="info-button modal__action-buttons-wrapper__btn" (click)="actionConfirmed.emit(false)">{{declineString}}</button>
+            </div>
+        </div>
+    </div>
+</div>

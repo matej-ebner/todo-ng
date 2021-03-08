@@ -1,0 +1,14 @@
+<div class="todo-detail-wrapper">
+    <p class="todo-detail-wrapper__data"><b>Name:</b> {{ todo.name }} </p>
+    <p class="todo-detail-wrapper__data"><b>Description:</b> {{ todo.description }}</p>
+    <p class="todo-detail-wrapper__data"><b>Date:</b> {{ todo.date | datePipe }}</p>
+
+    <div class="todo-detail-wrapper__action-buttons">
+        <button class="info-button" (click)="confirmTodoDeletion = true">Delete</button>
+        <button class="info-button" [routerLink]="['/edit/'+todo.id]">Edit</button>
+    </div>
+</div>
+
+<td-modal *ngIf="confirmTodoDeletion" [questionString]="'Are you sure you want to delete selected Todo?'"
+    [acceptString]="'Yes'" [declineString]="'No'" (actionConfirmed)="deleteModalAction($event)">
+</td-modal>
