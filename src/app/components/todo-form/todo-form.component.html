@@ -41,7 +41,7 @@
     </div>
 
     <div class="todo-form__btn-wrapper">
-        <button cdkMonitorSubtreeFocus type="button" (click)="saveTodo()"
+        <button type="button" (click)="saveTodo()"
             class="blank-button todo-form__btn-wrapper__btn " [ngClass]="{'todo-form__save-btn--active':f.valid}"
             [attr.disabled]="f.valid ? null : 'disabled'">
             Save
